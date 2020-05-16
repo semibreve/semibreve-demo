@@ -7,7 +7,8 @@ use Semibreve\BaseConfiguration;
 
 // This page is only accessible if logged in.
 $semibreve = new Manager(new BaseConfiguration(__DIR__ . '/../config.yml'));
-if (!$semibreve->getAuthenticatedUser() === null) {
+$user = $semibreve->getAuthenticatedUser();
+if ($user === null) {
     header('Location: /');
     die();
 }
@@ -37,10 +38,17 @@ if (!$semibreve->getAuthenticatedUser() === null) {
         <div class="col-md-12">
             <h3>Success!</h3>
             <p>
-                You can only see this page if you're logged in. If you're seeing it now, congratulations! Minim is all
-                set up and configured. Remember there are some settings in <code>config.yml</code> that absolutely
+                You can only see this page if you're logged in. If you're seeing it now, congratulations! Semibreve is
+                all set up and configured. Remember there are some settings in <code>config.yml</code> that absolutely
                 <i>must</i> be changed before going to production.
             </p>
+            <p>
+                The following information was detected in your session:
+            </p>
+            <ul>
+                <li><b>Username:</b> <?=$user->getUsername()?></li>
+                <li><b>Role:</b> <?=$user->getRole()?></li>
+            </ul>
         </div>
     </div>
     <div class="row">
