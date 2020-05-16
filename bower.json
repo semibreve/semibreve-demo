@@ -1,0 +1,18 @@
+{
+  "name": "semibreve-demo",
+  "version": "1.0.0",
+  "homepage": "https://github.com/semibreve/semibreve-demo",
+  "authors": [
+    "Saul Johnson <saul.a.johnson@gmail.com>"
+  ],
+  "description": "A demonstration of the Semibreve muti-user authentication library.",
+  "keywords": [
+    "minimal",
+    "authentication",
+    "demo"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bootswatch": "^4.4.1"
+  }
+}
